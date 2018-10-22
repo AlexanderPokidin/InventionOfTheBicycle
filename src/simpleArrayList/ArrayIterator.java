@@ -1,3 +1,5 @@
+package simpleArrayList;
+
 import java.util.Iterator;
 
 public class ArrayIterator<E> implements Iterator<E> {
