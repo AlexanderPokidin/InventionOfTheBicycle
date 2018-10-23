@@ -2,7 +2,7 @@ package simpleArrayList;
 
 import java.util.Iterator;
 
-public class SimpleArray<E> implements Simple<E> {
+public class SimpleArray<E> implements Array<E> {
 
     private E[] values;
 

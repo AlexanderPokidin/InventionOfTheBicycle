@@ -1,6 +1,6 @@
 package simpleArrayList;
 
-public interface Simple<E> extends Iterable<E> {
+public interface Array<E> extends Iterable<E> {
 
     boolean add(E e);
 

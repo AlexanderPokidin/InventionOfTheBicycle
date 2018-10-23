@@ -3,7 +3,7 @@ package simpleArrayList;
 public class SimpleArrayTest {
 
     public static void main(String[] args) {
-        Simple<String> strings = new SimpleArray<>();
+        Array<String> strings = new SimpleArray<>();
 
         strings.add("First");
         strings.add("Second");
