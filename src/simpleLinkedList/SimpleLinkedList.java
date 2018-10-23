@@ -2,13 +2,6 @@ package simpleLinkedList;
 
 public class SimpleLinkedList<E> implements Linked<E> {
 
-    public static void main(String[] args) {
-        SimpleLinkedList<String> stringList = new SimpleLinkedList<>();
-        stringList.addLast("First");
-        System.out.println(stringList.size());
-        System.out.println(stringList.getElementByIndex(0));
-    }
-
     private Node<E> lastNode;
     private Node<E> firstNode;
     private int size = 0;
@@ -22,14 +15,18 @@ public class SimpleLinkedList<E> implements Linked<E> {
     public void addLast(E e) {
         Node<E> prev = lastNode;
         prev.setCurrentElement(e);
-        lastNode = new Node<E>(null, prev, null);
+        lastNode = new Node<>(null, null, prev);
         prev.setNextElement(lastNode);
         size++;
     }
 
     @Override
     public void addFirst(E e) {
-
+        Node<E> next = firstNode;
+        next.setCurrentElement(e);
+        firstNode = new Node<>(null, next, null);
+        next.setPreviousElement(firstNode);
+        size++;
     }
 
     @Override
@@ -46,7 +43,7 @@ public class SimpleLinkedList<E> implements Linked<E> {
         return target.getCurrentElement();
     }
 
-    // Helper method to search for an element by index
+    // Helper method for search an element by index
     private Node<E> getNextElementForIndex(Node<E> current) {
         return current.getNextElement();
     }
